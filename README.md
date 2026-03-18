@@ -84,5 +84,11 @@ python3 manage.py runserver
 python manage.py runserver
 ```
 
+### 6. Login & UI Quick Access
+- Visit `http://127.0.0.1:8000/accounts/login/` to sign in.
+- If you go to `http://127.0.0.1:8000/admin/login/`, it redirects to the custom app login.
+- After login, the navbar includes: `Welcome <username>`, `User Manual`, `KB Manager` (staff only), `Logout`, and `AI Assignment, 2026`.
+- The in-app user manual is at `http://127.0.0.1:8000/diagnose/manual/`.
+
 ## 🎓 Academic Context
 This project was developed as an **AI Assignment Submission (2026)** to illustrate the application of Rule-Based Expert Systems in healthcare diagnostics. It focuses on the transparency of the inference process, providing clear feedback on why a specific diagnosis was suggested.
