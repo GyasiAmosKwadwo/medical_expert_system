@@ -126,4 +126,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirect to KB Manager after login
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/diagnose/kb-manager/'
+LOGOUT_REDIRECT_URL = '/diagnose/'
