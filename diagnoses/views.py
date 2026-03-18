@@ -22,6 +22,7 @@ def diagnose_view(request):
     else:
         form = SymptomForm()
 
+
     # Prepare Knowledge Base for Iterative Inference
     kb_data = []
     rules = Rule.objects.prefetch_related('symptoms')
@@ -36,6 +37,10 @@ def diagnose_view(request):
         "diagnoses": diagnoses,
         "kb_json": json.dumps(kb_data)
     })
+
+
+def manual_view(request):
+    return render(request, "diagnoses/manual.html")
 
 from django.contrib.admin.views.decorators import staff_member_required
 

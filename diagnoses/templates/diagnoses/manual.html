@@ -1,0 +1,106 @@
+{% extends "diagnoses/base.html" %}
+
+{% block title %}User Manual - Medical Expert System{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="manual-hero glass-card animate-fade-in-up p-4 p-lg-5">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-3">
+            <div>
+                <p class="badge bg-primary text-white py-1 px-2 small">USER GUIDE</p>
+                <h1 class="mt-2 mb-2">Medical Diagnosis Expert System Manual</h1>
+                <p class="lead text-muted-custom">A modern step-by-step authoritatively curated reference for clinicians, staff, and academic reviewers.</p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <a class="btn btn-modern btn-sm" href="{% url 'diagnoses:index' %}"><i class="bi bi-speedometer2 me-1"></i> Start Diagnosis</a>
+                    <a class="btn btn-outline-light btn-sm" href="{% url 'diagnoses:kb_manager' %}"><i class="bi bi-journal-bookmark me-1"></i> KB Manager</a>
+                </div>
+            </div>
+            <div class="text-end">
+                <div class="manual-level badge bg-success bg-opacity-10 text-success border border-success">2026 Standard</div>
+                <p class="text-muted small mt-2">Updated: March 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 g-3">
+        <div class="col-lg-4">
+            <div class="glass-card p-3">
+                <h5>Navigation</h5>
+                <ul class="manual-list">
+                    <li><a href="#diagnosis">1. Diagnose Patient</a></li>
+                    <li><a href="#export">2. Export Report</a></li>
+                    <li><a href="#kb">3. Knowledge Base Manager</a></li>
+                    <li><a href="#troubleshooting">4. Troubleshooting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="glass-card p-4">
+                <section id="diagnosis" class="mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <h3 class="mb-0">1. Diagnose Patient</h3>
+                        <span class="badge bg-secondary text-light">Essential</span>
+                    </div>
+                    <p class="text-muted-custom">Use the main diagnosis page to run symptom-based inference with clear reasoning output.</p>
+                    <ol class="manual-steps">
+                        <li>Select all present symptoms.</li>
+                        <li>Review suggested symptoms and add relevant ones.</li>
+                        <li>Click <strong>Analyze Symptoms</strong>.</li>
+                        <li>Review confidence, matched symptoms, and missing symptoms per prediction.</li>
+                        <li>Open the info tooltip to inspect inference logic.</li>
+                    </ol>
+                </section>
+
+                <section id="export" class="mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <h3 class="mb-0">2. Export Report</h3>
+                        <span class="badge bg-primary text-white">Pro Tip</span>
+                    </div>
+                    <p class="text-muted-custom">Generate documentation quickly for handoff, audit, or academic submission.</p>
+                    <p><strong>Action:</strong> Click <strong>Export Report</strong> to download a `.txt` case summary file.</p>
+                </section>
+
+                <section id="kb" class="mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <h3 class="mb-0">3. Knowledge Base Manager</h3>
+                        <span class="badge bg-warning text-dark">Staff only</span>
+                    </div>
+                    <p class="text-muted-custom">Staff and superusers can tune the inference engine by adding diseases, symptoms, and rules.</p>
+                    <ul class="manual-steps">
+                        <li>Add disease entries and descriptions.</li>
+                        <li>Add symptoms to expand your clinical vocabulary.</li>
+                        <li>Define rules: a disease plus one or more required symptoms.</li>
+                        <li>Only superusers can save rules after verifying clinical validity.</li>
+                    </ul>
+                </section>
+
+                <section id="troubleshooting" class="mb-4">
+                    <h3 class="mb-2">4. Troubleshooting</h3>
+                    <div class="alert alert-info bg-info bg-opacity-10 text-info border border-info">
+                        <strong>Tip:</strong> If there are no matches, update the KB with relevant rules or add missing symptoms first.
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="manual-card p-2">
+                                <h6 class="fw-bold">Page Access</h6>
+                                <p class="small text-muted-custom mb-0">Set user as staff for manager access; superuser for rule edits.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="manual-card p-2">
+                                <h6 class="fw-bold">System Checks</h6>
+                                <p class="small text-muted-custom mb-0">Run `python manage.py check` and `migrate` if pages fail to load.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="d-flex gap-2 flex-wrap">
+                    <a class="btn btn-modern btn-sm" href="{% url 'diagnoses:index' %}"><i class="bi bi-magic me-1"></i> Run Diagnosis</a>
+                    <a class="btn btn-outline-light btn-sm" href="https://github.com/GyasiAmosKwadwo/medical_expert_system" target="_blank"><i class="bi bi-file-earmark-code me-1"></i> View Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
